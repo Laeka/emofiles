@@ -1,0 +1,39 @@
+#Activar starship
+eval "$(starship init zsh)"
+
+export EDITOR="nvim"
+
+# alias
+alias v="nvim"
+alias cl='clear'
+# git
+alias gc="git commit -m"
+alias gst="git status"
+alias gb='git branch'
+alias gadd='git add'
+
+# dirs
+alias ..="cd .."
+alias ...="cd ../.."
+
+# eza
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2 --icons --git"
+
+# FZF (Usa fd como buscador por defecto)
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
+# Plugins de Zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

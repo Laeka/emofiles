@@ -1,0 +1,3 @@
+# Archivo de configuracion para el linter de selene
+[lint]
+globals = ["vim"]
