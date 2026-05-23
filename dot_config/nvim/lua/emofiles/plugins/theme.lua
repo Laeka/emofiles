@@ -4,7 +4,6 @@ return {
   lazy = false, -- Cargar al inicio
   priority = 1000, -- Asegurarse de que se cargue primero
   config = function()
-    --@diagnostic disable-next-line missing-fields
     require('catppuccin').setup {
       flavour = 'macchiato',
       transparent_background = true,

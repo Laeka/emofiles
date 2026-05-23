@@ -15,11 +15,23 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Exit insert mode with jk
 map('i', 'jk', '<ESC>')
 
--- Move selected lines up/down in visual mode
-map('x', '<S-j>', ":move '>+1<CR>gv-gv")
-map('x', '<S-k>', ":move '<-2<CR>gv-gv")
-map('n', '<S-j>', ":move '>+1<CR>gv-gv")
-map('n', '<S-k>', ":move '<-2<CR>gv-gv")
+-- Mover líneas seleccionadas en Modo Visual
+map('x', '<S-j>', ":move '>+1<CR>gv")
+map('x', '<S-k>', ":move '<-2<CR>gv")
 
-map('n', '<C-s>', '<cmd>vsplit<cr>', { desc = 'New horizontal window' })
-map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- Mover la línea actual en Modo Normal
+map('n', '<S-j>', ':m .+1<CR>')
+map('n', '<S-k>', ':m .-2<CR>')
+
+-- Moverse entre ventanas (splits) con Ctrl + h/j/k/l
+map('n', '<C-j>', '<Cmd>wincmd j<CR>')
+map('n', '<C-k>', '<Cmd>wincmd k<CR>')
+map('n', '<C-h>', '<Cmd>wincmd h<CR>')
+map('n', '<C-l>', '<Cmd>wincmd l<CR>')
+
+map('n', '<C-s>', '<cmd>vsplit<cr>', { desc = 'Nueva ventana vertical' })
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Abre los errores y warnings' })
+
+-- Ir al buffer anterior o siguiente
+map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Buffer anterior' })
+map('n', ']b', '<cmd>bnext<cr>', { desc = 'Buffer siguiente' })

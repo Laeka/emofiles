@@ -14,6 +14,9 @@ format =  '[$symbol$branch(:$remote_branch)]($style)'
 [docker_context]
 disabled = true
 
+[gcloud]
+disabled = true
+
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
 flamingo = "#f0c6c6"

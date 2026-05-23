@@ -6,13 +6,16 @@ return { -- Highlight, edit, and navigate code
     ensure_installed = {
       'lua',
       'luadoc',
+      'typescript',
+      'tsx',
+      'prisma',
+      'dockerfile',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = { 'ruby' },
     },
-    indent = { enable = true, disable = { 'ruby' } },
+    indent = { enable = true },
   },
 }

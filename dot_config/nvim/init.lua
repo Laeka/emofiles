@@ -27,7 +27,7 @@ require('lazy').setup(
   -- Aqui importas tus plugins
   {
     install = { colorscheme = { 'habamax' } },
-    checker = { enabled = false }, -- automatically check for plugin updates
+    checker = { enabled = false }, -- verifica automaticamente por updates
     change_detection = {
       notify = false,
     },
@@ -47,6 +47,9 @@ require('lazy').setup(
         task = '📌',
         lazy = '💤 ',
       },
+    },
+    rocks = {
+      enabled = false,
     },
   }
 )

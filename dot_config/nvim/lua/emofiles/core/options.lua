@@ -3,6 +3,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
+-- desactivar providers de lenguajes externos
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- options.lua
 local opt = vim.opt
 
@@ -34,7 +40,7 @@ opt.formatoptions:remove 'o' -- evita que inserte un comentario al presionar "o"
 
 -- comportamiento del editor
 opt.undofile = true -- Historial de undo persistente
-opt.swapfile = true -- desactiva los archivos swap
+opt.swapfile = false -- desactiva los archivos swap
 opt.backup = false -- desactiva los archivos backup
 opt.scrolloff = 10 -- mantiene 10 lineas de contexto alrededor del cursor
 opt.splitright = true -- las nuevas ventanas verticales se abren a la derecha
