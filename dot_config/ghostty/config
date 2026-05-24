@@ -1,0 +1,8 @@
+font-family = MesloLGS Nerd Font Mono
+font-size = 12
+theme = Catppuccin Macchiato
+background-opacity = 0.6
+background-blur = false
+mouse-hide-while-typing = true
+window-decoration = false 
+keybind = ctrl+shift+r=reload_config

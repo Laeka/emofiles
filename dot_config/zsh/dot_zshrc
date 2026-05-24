@@ -18,6 +18,7 @@ setopt HIST_IGNORE_DUPS # No guarda comandos repetidos seguidos (ej. si haces 'l
 alias v="nvim"
 alias cl="clear"
 alias cd="z"
+alias cfsnap="sudo nvim /etc/snapper/configs/root"
 # git
 alias gc="git commit -m"
 alias gst="git status"
@@ -32,6 +33,15 @@ alias ...="cd ../.."
 alias l="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias ltree="eza --tree --level=2 --icons --git"
+
+# alias config inteligente
+conf() {
+  if [ -z "$1" ]; then
+    cd ~/.config
+  else
+    cd ~/.config/"$1"
+  fi
+}
 
 # Plugin zsh-completions
 fpath=(/usr/share/zsh/site-functions $fpath)
