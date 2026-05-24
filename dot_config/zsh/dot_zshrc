@@ -3,14 +3,26 @@ eval "$(starship init zsh)"
 
 export EDITOR="nvim"
 
+# configuracion del historial
+export HISTFILE="$HOME/.config/zsh/.zsh_history" # Ubicación del archivo
+export HISTSIZE=10000 # Límite de comandos en memoria RAM
+export SAVEHIST=10000 # Límite de comandos guardados en el archivo
+
+# Opciones de comportamiento del historial
+setopt APPEND_HISTORY # Agrega comandos al archivo en lugar de sobrescribirlo
+setopt SHARE_HISTORY # Comparte el historial entre diferentes paneles/ventanas de tmux
+setopt INC_APPEND_HISTORY # Guarda el comando al instante de ejecutarlo (no espera a cerrar la terminal)
+setopt HIST_IGNORE_DUPS # No guarda comandos repetidos seguidos (ej. si haces 'ls' 5 veces)
+
 # alias
 alias v="nvim"
-alias cl='clear'
+alias cl="clear"
+alias cd="z"
 # git
 alias gc="git commit -m"
 alias gst="git status"
-alias gb='git branch'
-alias gadd='git add'
+alias gb="git branch"
+alias gadd="git add"
 
 # dirs
 alias ..="cd .."
@@ -21,8 +33,27 @@ alias l="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias ltree="eza --tree --level=2 --icons --git"
 
+# Plugin zsh-completions
+fpath=(/usr/share/zsh/site-functions $fpath)
+autoload -U compinit && compinit
+
+# Configuración del SDK de Android
+export ANDROID_HOME="/opt/android-sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# NVM - Lazy Loading
+export NVM_DIR="$HOME/.nvm"
+lazy_load_nvm() {
+  unset -f nvm node npm npx yarn pnpm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+for cmd in nvm node npm npx yarn pnpm; do
+  eval "${cmd}() { lazy_load_nvm; ${cmd} \"\$@\"; }"
+done
+
 # FZF (Usa fd como buscador por defecto)
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
@@ -30,14 +61,8 @@ source /usr/share/fzf/completion.zsh
 eval "$(zoxide init zsh)"
 
 # Plugins de Zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Configuración del SDK de Android
-export ANDROID_HOME="/opt/android-sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
