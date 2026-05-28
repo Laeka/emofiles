@@ -70,6 +70,9 @@ source /usr/share/fzf/completion.zsh
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# Generated for envman. Do not edit.(webi)
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
 # Plugins de Zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up

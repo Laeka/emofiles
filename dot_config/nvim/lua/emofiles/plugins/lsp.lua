@@ -111,7 +111,6 @@ return {
           'typescriptreact',
         },
       },
-      prismals = {},
     }
 
     -- Obtenemos los nombres de los servidores que hemos definido arriba

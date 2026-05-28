@@ -24,10 +24,7 @@ map('n', '<S-j>', ':m .+1<CR>')
 map('n', '<S-k>', ':m .-2<CR>')
 
 -- Moverse entre ventanas (splits) con Ctrl + h/j/k/l
-map('n', '<C-j>', '<Cmd>wincmd j<CR>')
-map('n', '<C-k>', '<Cmd>wincmd k<CR>')
-map('n', '<C-h>', '<Cmd>wincmd h<CR>')
-map('n', '<C-l>', '<Cmd>wincmd l<CR>')
+-- manejado por vim-tmux-navigator
 
 map('n', '<C-s>', '<cmd>vsplit<cr>', { desc = 'Nueva ventana vertical' })
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Abre los errores y warnings' })

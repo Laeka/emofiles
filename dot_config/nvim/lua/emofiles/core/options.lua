@@ -22,6 +22,7 @@ end) -- portapapeles global del sistema
 opt.number = true -- muestra los numeros a la izquierda
 opt.relativenumber = true -- los numeros a la izquierda seran relativos
 opt.signcolumn = 'yes' -- mantiene la columna para errores o git.. siempre visible
+opt.colorcolumn = '85' -- linea vertical para cuando escribes
 opt.cursorline = true -- resalta la linea actual
 opt.showmode = false -- oculta el estado en la parte inferior
 opt.pumheight = 10 -- altura maxima del menu de autocompletado
