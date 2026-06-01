@@ -1,0 +1,8 @@
+hl.config({
+	env = {
+		"ELECTRON_OZONE_PLATFORM_HINT,auto",
+		"HYPRCURSOR_SIZE,24",
+		"XCURSOR_SIZE,24",
+		"QT_CURSOR_SIZE,24",
+	},
+})
