@@ -44,6 +44,7 @@ floating_window("floating-nm-internet", "nm-connection-editor")
 
 -- ventanas flotantes middle-top
 centered_float("yazi-float", { initial_title = "float-yazi" }, 0.6, 0.7)
+centered_float("btop-float", { title = "btop" }, 0.6, 0.7)
 centered_float(
 	"terminal-quake",
 	{ initial_title = "ghostty-quake" },

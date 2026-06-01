@@ -38,6 +38,8 @@ local keybinds = {
 	{ mod .. " + RETURN", exec(defaults.terminal) },
 	{ mod .. " + SPACE", exec(defaults.applauncher) },
 	{ mod .. " + E", exec(defaults.filemanager) },
+	{ mod .. " + U", exec(defaults.btop) },
+	{ mod .. " + O", exec(defaults.logout) },
 	{ "Print", exec(defaults.shot_region) },
 	{ "CTRL + Print", exec(defaults.shot_screen) },
 	{ "ALT + Print", exec(defaults.shot_active) },
