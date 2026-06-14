@@ -4,8 +4,11 @@ local M = {}
 M.applauncher = "tofi-drun --drun-launch=true"
 M.terminal = "ghostty"
 M.logout = "wlogout"
-M.filemanager = "ghostty --title=float-yazi -e yazi"
-M.btop = 'ghostty --title="btop" -e btop'
+M.filemanager = "ghostty --title=float-ghostty -e yazi"
+M.btop = "ghostty --title=float-ghostty -e btop"
+
+-- scripts
+M.bloom = "/home/laeka/emoscripts/bloom.sh"
 
 -- screenshots
 M.shot_region = "grimblast copy area"

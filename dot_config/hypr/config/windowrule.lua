@@ -43,8 +43,7 @@ floating_window("floating-pavu-volumen", "org.pulseaudio.pavucontrol")
 floating_window("floating-nm-internet", "nm-connection-editor")
 
 -- ventanas flotantes middle-top
-centered_float("yazi-float", { initial_title = "float-yazi" }, 0.6, 0.7)
-centered_float("btop-float", { title = "btop" }, 0.6, 0.7)
+centered_float("float-ghostty", { initial_title = "float-ghostty" }, 0.6, 0.7)
 centered_float(
 	"terminal-quake",
 	{ initial_title = "ghostty-quake" },

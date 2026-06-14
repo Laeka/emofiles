@@ -22,6 +22,16 @@ local keybinds = {
 		exec("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"),
 	},
 
+	-- Scripts
+	{
+		mod .. " + B",
+		exec(defaults.bloom, {
+			float = true,
+			center = true,
+			size = { 800, 600 },
+		}),
+	},
+
 	-- Focus y Mover (Direcciones)
 	{ mod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }) },
 	{ mod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }) },
