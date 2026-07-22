@@ -95,7 +95,6 @@ return {
 
     -- CONFIGURACIÓN DE SERVIDORES LSP
     local servers = {
-      -- Servidor para Lua
       lua_ls = {
         settings = {
           Lua = {
@@ -122,6 +121,7 @@ return {
       'prettier',
       'eslint_d',
       'hadolint', --docker
+      'jdtls', --java
     })
 
     -- Configuramos mason-tool-installer para que instale automáticamente esa lista
@@ -132,6 +132,10 @@ return {
       automatic_installation = false,
       handlers = {
         function(server_name)
+          if server_name == 'jdtls' then
+            return
+          end
+
           server_name = server_name == 'tsserver' and 'ts_ls' or server_name
           local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})

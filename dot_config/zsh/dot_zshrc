@@ -47,10 +47,6 @@ conf() {
 fpath=(/usr/share/zsh/site-functions $fpath)
 autoload -U compinit && compinit
 
-# Configuración del SDK de Android
-export ANDROID_HOME="/opt/android-sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
-
 # NVM - Lazy Loading
 export NVM_DIR="$HOME/.nvm"
 lazy_load_nvm() {
@@ -60,6 +56,16 @@ lazy_load_nvm() {
 }
 for cmd in nvm node npm npx yarn pnpm; do
   eval "${cmd}() { lazy_load_nvm; ${cmd} \"\$@\"; }"
+done
+
+# SDKMAN - Lazy Loading
+export SDKMAN_DIR="$HOME/.sdkman"
+lazy_load_sdkman() {
+  unset -f sdk java javac
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+}
+for cmd in sdk java javac mvn; do
+  eval "${cmd}() { lazy_load_sdkman; ${cmd} \"\$@\"; }"
 done
 
 # FZF (Usa fd como buscador por defecto)

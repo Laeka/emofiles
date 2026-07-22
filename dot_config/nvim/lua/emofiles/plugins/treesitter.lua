@@ -14,6 +14,8 @@ return {
       'dockerfile',
       'markdown',
       'markdown_inline',
+      'java',
+      'javadoc',
     }
 
     for _, parser in ipairs(parsers) do
